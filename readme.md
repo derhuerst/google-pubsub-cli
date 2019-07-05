@@ -24,7 +24,21 @@ Or use [`npx`](https://npmjs.com/package/npx). ✨
 ## Usage
 
 ```
-todo
+Usage:
+    echo 'a new message' | publish-to-pubsub-topic <topic>
+Options:
+	--project   -p  The Google Cloud Project ID.
+	--encoding  -e  Encoding to encode the message payload with. Default: utf-8
+```
+
+```
+Usage:
+    read-from-pubsub-subscription <subscription>
+Options:
+	--format    -f  How to format the messages. json, raw, inspect (default)
+	--ack       -a  Acknowledge the messages received.
+	--encoding  -e  Encoding to decode the message payload with. Default: utf-8
+	--metadata  -m  Print the message payload along its metadata.
 ```
 
 

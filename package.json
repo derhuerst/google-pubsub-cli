@@ -3,8 +3,12 @@
 	"description": "Publish to Google Cloud Pub/Sub topics and read from subscriptions.",
 	"version": "1.0.0",
 	"files": [
+		"publish.js",
+		"read-subscription.js"
 	],
 	"bin": {
+		"publish-to-pubsub-topic": "./publish.js",
+		"read-from-pubsub-subscription": "./read-subscription.js"
 	},
 	"keywords": [
 		"google",
@@ -12,6 +16,7 @@
 		"pubsub",
 		"pub/sub",
 		"publish",
+		"read",
 		"command line",
 		"cli"
 	],
@@ -24,6 +29,8 @@
 		"node": ">=8"
 	},
 	"dependencies": {
-		"mri": "^1.1.4"
+		"@google-cloud/pubsub": "^0.30.1",
+		"mri": "^1.1.4",
+		"split2": "^3.1.1"
 	}
 }

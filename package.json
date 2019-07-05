@@ -1,0 +1,29 @@
+{
+	"name": "google-pubsub-cli",
+	"description": "Publish to Google Cloud Pub/Sub topics and read from subscriptions.",
+	"version": "1.0.0",
+	"files": [
+	],
+	"bin": {
+	},
+	"keywords": [
+		"google",
+		"cloud",
+		"pubsub",
+		"pub/sub",
+		"publish",
+		"command line",
+		"cli"
+	],
+	"author": "Jannis R <mail@jannisr.de>",
+	"homepage": "https://github.com/derhuerst/google-pubsub-cli",
+	"repository": "derhuerst/google-pubsub-cli",
+	"bugs": "https://github.com/derhuerst/google-pubsub-cli/issues",
+	"license": "ISC",
+	"engines": {
+		"node": ">=8"
+	},
+	"dependencies": {
+		"mri": "^1.1.4"
+	}
+}

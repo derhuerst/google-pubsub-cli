@@ -44,7 +44,8 @@ const subName = argv._[0]
 if ('string' !== typeof subName || !subName) showError('subscription must be a non-empty string.')
 
 const pubSub = new PubSub({
-	projectId: argv.project || argv.p || process.env.PUBSUB_PROJECT_ID
+	// todo: remove `PUBSUB_PROJECT_ID` (breaking)
+	projectId: argv.project || argv.p || process.env.GOOGLE_CLOUD_PROJECT || process.env.PUBSUB_PROJECT_ID
 })
 const subscription = pubSub.subscription(subName)
 

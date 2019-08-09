@@ -4,7 +4,8 @@
 	"version": "1.0.1",
 	"files": [
 		"publish.js",
-		"read-subscription.js"
+		"read-subscription.js",
+		"lib"
 	],
 	"bin": {
 		"publish-to-pubsub-topic": "./publish.js",

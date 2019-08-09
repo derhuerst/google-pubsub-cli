@@ -31,9 +31,9 @@ if (argv.version || argv.v) {
 	process.exit(0)
 }
 
-const {PubSub} = require('@google-cloud/pubsub')
 const {inspect} = require('util')
 const {isatty} = require('tty')
+const createPubSub = require('./lib/pubsub')
 
 const showError = (err) => {
 	console.error(err)
@@ -43,10 +43,7 @@ const showError = (err) => {
 const subName = argv._[0]
 if ('string' !== typeof subName || !subName) showError('subscription must be a non-empty string.')
 
-const pubSub = new PubSub({
-	// todo: remove `PUBSUB_PROJECT_ID` (breaking)
-	projectId: argv.project || argv.p || process.env.GOOGLE_CLOUD_PROJECT || process.env.PUBSUB_PROJECT_ID
-})
+const pubSub = createPubSub(argv.project || argv.p)
 const subscription = pubSub.subscription(subName)
 
 const encoding = argv.encoding || argv.e || 'utf-8'

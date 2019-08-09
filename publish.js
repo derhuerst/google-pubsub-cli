@@ -27,9 +27,9 @@ if (argv.version || argv.v) {
 	process.exit(0)
 }
 
-const {PubSub} = require('@google-cloud/pubsub')
 const split = require('split2')
 const {Writable} = require('stream')
+const createPubSub = require('./lib/pubsub')
 
 const showError = (err) => {
 	console.error(err)
@@ -41,10 +41,7 @@ const encoding = argv.encoding || argv.e || 'utf-8'
 const topicName = argv._[0]
 if ('string' !== typeof topicName || !topicName) showError('topic must be a non-empty string.')
 
-const pubSub = new PubSub({
-	// todo: remove `PUBSUB_PROJECT_ID` (breaking)
-	projectId: argv.project || argv.p || process.env.GOOGLE_CLOUD_PROJECT || process.env.PUBSUB_PROJECT_ID
-})
+const pubSub = createPubSub(argv.project || argv.p)
 const topic = pubSub.topic(topicName)
 
 // todo: support binary input

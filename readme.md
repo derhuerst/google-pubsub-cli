@@ -41,6 +41,16 @@ Options:
 	--metadata  -m  Print the message payload along its metadata.
 ```
 
+```
+Usage:
+    create-pubsub-topic <topic>
+```
+
+```
+Usage:
+    create-pubsub-subscription <topic> <subscription>
+```
+
 
 ## Contributing
 

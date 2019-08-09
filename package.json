@@ -1,15 +1,19 @@
 {
 	"name": "google-pubsub-cli",
 	"description": "Publish to Google Cloud Pub/Sub topics and read from subscriptions.",
-	"version": "1.0.1",
+	"version": "1.1.0",
 	"files": [
 		"publish.js",
 		"read-subscription.js",
+		"create-topic.js",
+		"create-subscription.js",
 		"lib"
 	],
 	"bin": {
 		"publish-to-pubsub-topic": "./publish.js",
-		"read-from-pubsub-subscription": "./read-subscription.js"
+		"read-from-pubsub-subscription": "./read-subscription.js",
+		"create-pubsub-topic": "./create-topic.js",
+		"create-pubsub-subscription": "./create-subscription.js"
 	},
 	"keywords": [
 		"google",
